@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2020 at 02:53 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Nov 09, 2022 at 05:09 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -38,6 +37,7 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`username`, `address`) VALUES
+('atharvakharat', 'Sunita Nagar, Pune'),
 ('user_1', 'IIT Kharagpur'),
 ('user_1', 'IIT Kharagpur, Kharagpur'),
 ('user_1', 'IIT Kharagpur, Kharagpur, West'),
@@ -68,7 +68,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', 'abhishek');
+('gaurav', 'pagare'),
+('sakshi', 'sakshi'),
+('sam', 'sam'),
+('vivek', 'vikky');
 
 -- --------------------------------------------------------
 
@@ -89,6 +92,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`username`, `name`, `email`, `password`, `contact_no`) VALUES
+('atharvakharat', 'Atharva Kharat', 'atharvakharat@gmail.com', 'atharva', '7984546521'),
+('darshantholiya', 'Darshan', 'darshantholiya036@gmail.com', 'darshan', '5489822636'),
 ('user_1', 'user_1', 'user_1@abc.com', 'abhishek', '1234567890'),
 ('user_2', 'user_2', 'user_2@abc.com', 'abhishek', '1234567890'),
 ('user_3', 'user_3', 'user_3@abc.com', 'abhishek', '1234567890'),
@@ -120,10 +125,9 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`username`, `name`, `email`, `address`, `password`, `contact_no`, `R_ID`) VALUES
-('manager_1', 'manager_1', 'manager_1@abc.com', 'IIT Kharagpur', 'abhishek', '1234567890', 2),
 ('manager_2', 'manager_2', 'manager_2@abc.com', 'IIT Kharagpur', 'abhishek', '1234567890', 3),
 ('manager_3', 'manager_3', 'manager_3@abc.com', 'IIT Kharagpur', 'abhishek', '1234567890', 16),
-('manager_test', 'manager_test', 'manager_test@gmail.com', 'IIT Kharagpur', 'abhishek', '9987345612', 2);
+('vikaskhanna', 'Vikas Khanna', 'vikaskhanna@gmail.com', 'New Delhi', 'masterchef', '7875463218', 19);
 
 -- --------------------------------------------------------
 
@@ -144,13 +148,8 @@ CREATE TABLE `menu_item` (
 --
 
 INSERT INTO `menu_item` (`item_ID`, `name`, `price`, `description`, `R_ID`) VALUES
-(1, 'Paneer Butter Masala ', 150, 'description', 2),
-(2, 'Kadhai Paneer ', 125, 'description', 2),
-(3, 'Butter Chicken', 132, 'description', 2),
-(4, 'Malai Kofta ', 185, 'description', 2),
-(11, 'Tandoori Roti', 20, 'description', 2),
 (12, 'Chole Bhature', 120, 'description', 3),
-(13, 'Kadai Chicken', 180, 'Spicy', 2);
+(15, 'Paav Bhaji', 150, 'Mh12 pavbhaji', 19);
 
 -- --------------------------------------------------------
 
@@ -186,7 +185,11 @@ INSERT INTO `orders` (`order_ID`, `total_price`, `order_date`, `order_status`, `
 (13, '257', '2020-03-31', 'PLACED', 'IIT Kharagpur, Kharagpur', 'user_1', 2),
 (14, '660', '2020-03-31', 'PLACED', 'asdadasdadadadadsadddddddddddadassssssssssssssssssssssssssssssssssssss', 'user_1', 2),
 (15, '1180', '2020-03-31', 'PLACED', 'ROOM NO 218,SDS BLOCK,MMM HALL,IIT KHARAGPUR', 'user_1', 2),
-(16, '272', '2020-03-31', 'PLACED', 'MMM Hall, IIT Kharagpur', 'user_1', 2);
+(16, '272', '2020-03-31', 'PLACED', 'MMM Hall, IIT Kharagpur', 'user_1', 2),
+(17, '1000', '2022-11-05', 'DELIVERED', 'Shaniwaarwada, Pune', 'user_1', 19),
+(18, '1000', '2022-11-07', 'DELIVERED', 'kasba peth', 'darshantholiya', 19),
+(19, '5000', '2022-11-07', 'DELIVERED', 'kasba peth', 'darshantholiya', 19),
+(20, '300', '2022-11-07', 'DELIVERED', 'Manchar', 'atharvakharat', 19);
 
 -- --------------------------------------------------------
 
@@ -205,36 +208,11 @@ CREATE TABLE `order_item` (
 --
 
 INSERT INTO `order_item` (`order_ID`, `item_ID`, `quantity`) VALUES
-(1, 1, 1),
-(2, 1, 1),
-(2, 2, 2),
-(3, 1, 1),
-(3, 11, 4),
 (4, 12, 1),
-(5, 4, 2),
-(5, 11, 4),
-(8, 1, 2),
-(8, 11, 5),
-(9, 1, 2),
-(9, 11, 4),
-(10, 1, 1),
-(11, 2, 1),
-(11, 11, 3),
-(12, 1, 1),
-(12, 2, 1),
-(12, 3, 1),
-(12, 11, 1),
-(13, 2, 1),
-(13, 3, 1),
-(14, 1, 1),
-(14, 2, 1),
-(14, 4, 1),
-(14, 11, 1),
-(14, 13, 1),
-(15, 2, 5),
-(15, 4, 3),
-(16, 3, 1),
-(16, 11, 7);
+(17, 15, 1),
+(18, 15, 1),
+(19, 15, 5),
+(20, 15, 2);
 
 -- --------------------------------------------------------
 
@@ -258,7 +236,8 @@ INSERT INTO `payment` (`payment_ID`, `amount`, `payment_date`, `order_ID`) VALUE
 (2, 120, '2020-03-25', 4),
 (4, 380, '2020-03-28', 9),
 (5, 185, '2020-03-28', 11),
-(6, 272, '2020-03-31', 16);
+(6, 272, '2020-03-31', 16),
+(7, 5000, '2022-11-07', 19);
 
 -- --------------------------------------------------------
 
@@ -282,7 +261,8 @@ INSERT INTO `restaurant` (`R_ID`, `name`, `location`, `phone_number`, `rating`) 
 (2, 'Smart Pind', 'IIT Khargpur', '1234567890', 3.5),
 (3, 'Peep Kitchen', 'IIT Khargpur', '1234567890', 3.0),
 (16, 'Heritage', 'IIT Khargpur', '09932977700', 3.0),
-(18, 'Dakshin', 'IIT Kharagpur', '9912345612', 3.0);
+(18, 'Dakshin', 'IIT Kharagpur', '9912345612', 3.0),
+(19, 'MH12 Pav Bhaji', 'Rasta Peth, Pune', '9403932426', 3.0);
 
 -- --------------------------------------------------------
 
@@ -391,25 +371,25 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `menu_item`
 --
 ALTER TABLE `menu_item`
-  MODIFY `item_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `item_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `payment_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `R_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `R_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `review`
@@ -469,4 +449,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-insert into admin values ('aniket', 'chacha');
