@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2022 at 05:09 AM
+-- Generation Time: Nov 10, 2022 at 01:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -37,20 +37,11 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`username`, `address`) VALUES
+('anu', 'Aloknagri, Pune'),
+('anurag', 'anurag'),
 ('atharvakharat', 'Sunita Nagar, Pune'),
-('user_1', 'IIT Kharagpur'),
-('user_1', 'IIT Kharagpur, Kharagpur'),
-('user_1', 'IIT Kharagpur, Kharagpur, West'),
-('user_1', 'MMM Hall, IIT Kharagpur'),
-('user_2', 'IIT Kharagpur'),
-('user_3', 'IIT Kharagpur'),
-('user_4', 'IIT Kharagpur'),
-('user_5', 'IIT Kharagpur'),
-('user_6', 'IIT Kharagpur'),
-('user_7', 'IIT Kharagpur'),
-('user_8', 'IIT Kharagpur'),
-('user_test', 'LBS Hall, IIT Kharagpur'),
-('user_test', 'MMM Hall, IIT Kharagpur');
+('sakshid', 'Shaniwarwada, Pune'),
+('siddheshpatil', 'Pune');
 
 -- --------------------------------------------------------
 
@@ -92,17 +83,12 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`username`, `name`, `email`, `password`, `contact_no`) VALUES
+('anu', 'Anushka Sandbhor', 'anushkasandbhor@gmail.com', 'panda', '7896456969'),
+('anurag', 'Anurag', 'anurag@gmail.com', 'anurag', 'anurag'),
 ('atharvakharat', 'Atharva Kharat', 'atharvakharat@gmail.com', 'atharva', '7984546521'),
 ('darshantholiya', 'Darshan', 'darshantholiya036@gmail.com', 'darshan', '5489822636'),
-('user_1', 'user_1', 'user_1@abc.com', 'abhishek', '1234567890'),
-('user_2', 'user_2', 'user_2@abc.com', 'abhishek', '1234567890'),
-('user_3', 'user_3', 'user_3@abc.com', 'abhishek', '1234567890'),
-('user_4', 'user_4', 'user_4@abc.com', 'abhishek', '1234567890'),
-('user_5', 'user_5', 'user_5@abc.com', 'abhishek', '1234567890'),
-('user_6', 'user_6', 'user_6@abc.com', 'abhishek', '1234567890'),
-('user_7', 'user_7', 'user_7@abc.com', 'abhishek', '1234567890'),
-('user_8', 'user_8', 'user_8@abc.com', 'abhishek', '1234567890'),
-('user_test', 'user_test', 'user_test@gmail.com', 'abhishek', '9932977700');
+('sakshid', 'Sakshi Divate', 'sakshibabalu@gmail.com', 'babalu', '1692696969'),
+('siddheshpatil', 'Siddhesh Vivek Patil', 'siddheshpatil@gmail.com', 'reyna', '8785844525');
 
 -- --------------------------------------------------------
 
@@ -125,9 +111,12 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`username`, `name`, `email`, `address`, `password`, `contact_no`, `R_ID`) VALUES
-('manager_2', 'manager_2', 'manager_2@abc.com', 'IIT Kharagpur', 'abhishek', '1234567890', 3),
-('manager_3', 'manager_3', 'manager_3@abc.com', 'IIT Kharagpur', 'abhishek', '1234567890', 16),
-('vikaskhanna', 'Vikas Khanna', 'vikaskhanna@gmail.com', 'New Delhi', 'masterchef', '7875463218', 19);
+('aniket', 'aniket', 'aniketiwiri@hotmale.com', 'pune', 'aniket', '9999999999', 3),
+('bibek', 'bibek basu', 'vivekpatil@hotmail.com', 'Pune', 'bibek', '000000000', 2),
+('goro ', 'goro', 'gauravpagare@gmail.com', 'pune', 'goro', '0000000000', 1),
+('palekar', 's palekar', 'sakshipalekar@junglee.com', 'Pune', 'palekar', '9999666666', 4),
+('sam', 'samruddhi', 'samnavale@junglee.com', 'Pune', 'sam', '9669696969', 5),
+('sonkya', 'chunkey pandey', 'sonkya@gym.com', 'Pune', 'sonkya', '9788675674653', 6);
 
 -- --------------------------------------------------------
 
@@ -148,8 +137,24 @@ CREATE TABLE `menu_item` (
 --
 
 INSERT INTO `menu_item` (`item_ID`, `name`, `price`, `description`, `R_ID`) VALUES
-(12, 'Chole Bhature', 120, 'description', 3),
-(15, 'Paav Bhaji', 150, 'Mh12 pavbhaji', 19);
+(16, 'Farmhouse', 400, 'Pizza made in farm', 4),
+(17, 'Italian Pizza', 300, 'Overloaded with crunchy onions', 4),
+(18, 'Frozen Non-veg Pizza', 450, 'A frozen pizza, which is one n', 4),
+(19, 'Chicken Dum Biryani', 320, 'a spiced mix of meat and rice,', 5),
+(20, 'Butter Chicken', 450, 'A Chicken with Amul Butter, As', 5),
+(21, 'Makke di Roti, Sarso da Saag', 300, 'Flavourful Roti made of Corn F', 5),
+(22, 'Blue Ocean', 150, 'Chilling drink', 3),
+(23, 'meat steak', 800, 'Spicy and juicy', 3),
+(24, 'continental combo', 650, 'continental spices and flavour', 3),
+(25, 'Masala Dosa', 120, 'Delicious masala dosa', 2),
+(26, 'Idli', 200, 'When one thinks of south-India', 2),
+(27, 'Uttappams', 500, 'Is it a pancake? Is it a pizza', 2),
+(28, 'Veg Cheese Burger', 200, 'The veg patty mixture is stuff', 1),
+(29, 'French Fries', 169, 'Ek bar mangaya to pet bhar kha', 1),
+(30, 'Choco Lava Cake', 100, 'Taste like choco lava cake.', 1),
+(31, 'Cold Coffee', 125, 'Not hot like your girlfriend, ', 6),
+(32, 'Paneer Cheese Sandwich', 90, 'Aisa sandwich jis main paneer ', 6),
+(33, 'Non veg noodles', 180, 'Curly and  long noodles, just ', 6);
 
 -- --------------------------------------------------------
 
@@ -172,24 +177,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_ID`, `total_price`, `order_date`, `order_status`, `delivery_address`, `username`, `R_ID`) VALUES
-(1, '150', '2020-03-23', 'DELIVERED', 'IIT Kharagpur', 'user_1', 2),
-(2, '400', '2020-03-23', 'DELIVERED', 'IIT Kharagpur', 'user_1', 2),
-(3, '230', '2020-03-25', 'DELIVERED', 'IIT Kharagpur', 'user_1', 2),
-(4, '120', '2020-03-25', 'DELIVERED', 'IIT Kharagpur', 'user_1', 3),
-(5, '450', '2020-03-25', 'DELIVERED', 'IIT Kharagpur', 'user_1', 2),
-(8, '400', '2020-03-26', 'DELIVERED', 'IIT Kharagpur', 'user_1', 2),
-(9, '380', '2020-03-28', 'DELIVERED', 'IIT Kharagpur', 'user_8', 2),
-(10, '150', '2020-03-28', 'DELIVERED', 'IIT Kharagpur, Kharagpur', 'user_1', 2),
-(11, '185', '2020-03-28', 'DELIVERED', 'MMM Hall, IIT Kharagpur', 'user_test', 2),
-(12, '427', '2020-03-31', 'PLACED', 'IIT Kharagpur, Kharagpur', 'user_1', 2),
-(13, '257', '2020-03-31', 'PLACED', 'IIT Kharagpur, Kharagpur', 'user_1', 2),
-(14, '660', '2020-03-31', 'PLACED', 'asdadasdadadadadsadddddddddddadassssssssssssssssssssssssssssssssssssss', 'user_1', 2),
-(15, '1180', '2020-03-31', 'PLACED', 'ROOM NO 218,SDS BLOCK,MMM HALL,IIT KHARAGPUR', 'user_1', 2),
-(16, '272', '2020-03-31', 'PLACED', 'MMM Hall, IIT Kharagpur', 'user_1', 2),
-(17, '1000', '2022-11-05', 'DELIVERED', 'Shaniwaarwada, Pune', 'user_1', 19),
-(18, '1000', '2022-11-07', 'DELIVERED', 'kasba peth', 'darshantholiya', 19),
-(19, '5000', '2022-11-07', 'DELIVERED', 'kasba peth', 'darshantholiya', 19),
-(20, '300', '2022-11-07', 'DELIVERED', 'Manchar', 'atharvakharat', 19);
+(21, '1400', '2022-11-09', 'DELIVERED', 'Aissms Coe Pune', 'atharvakharat', 4),
+(22, '1860', '2022-11-10', 'DELIVERED', 'Sadashiv Peth, Pune', 'atharvakharat', 5),
+(23, '305', '2022-11-10', 'DELIVERED', 'Aloknagri, Pune', 'anu ', 6);
 
 -- --------------------------------------------------------
 
@@ -208,11 +198,12 @@ CREATE TABLE `order_item` (
 --
 
 INSERT INTO `order_item` (`order_ID`, `item_ID`, `quantity`) VALUES
-(4, 12, 1),
-(17, 15, 1),
-(18, 15, 1),
-(19, 15, 5),
-(20, 15, 2);
+(21, 16, 2),
+(21, 17, 2),
+(22, 19, 3),
+(22, 20, 2),
+(23, 31, 1),
+(23, 33, 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +228,9 @@ INSERT INTO `payment` (`payment_ID`, `amount`, `payment_date`, `order_ID`) VALUE
 (4, 380, '2020-03-28', 9),
 (5, 185, '2020-03-28', 11),
 (6, 272, '2020-03-31', 16),
-(7, 5000, '2022-11-07', 19);
+(7, 5000, '2022-11-07', 19),
+(8, 1400, '2022-11-09', 21),
+(9, 1860, '2022-11-10', 22);
 
 -- --------------------------------------------------------
 
@@ -258,11 +251,12 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`R_ID`, `name`, `location`, `phone_number`, `rating`) VALUES
-(2, 'Smart Pind', 'IIT Khargpur', '1234567890', 3.5),
-(3, 'Peep Kitchen', 'IIT Khargpur', '1234567890', 3.0),
-(16, 'Heritage', 'IIT Khargpur', '09932977700', 3.0),
-(18, 'Dakshin', 'IIT Kharagpur', '9912345612', 3.0),
-(19, 'MH12 Pav Bhaji', 'Rasta Peth, Pune', '9403932426', 3.0);
+(1, 'Crazy Cheesy', 'FC road', '999888222', 4.5),
+(2, 'Vaishali', 'JM road', '999333222', 5.0),
+(3, 'Social', 'Sinhgad road', '7777777', 4.2),
+(4, 'Dominos', 'Vimaan Nagar', '44445555', 4.0),
+(5, 'Baba ka Dhabha', 'shivaji nagar', '123456789', 4.5),
+(6, 'Durga Cafe', 'AISSMS Cafe', '989876543', 2.9);
 
 -- --------------------------------------------------------
 
@@ -282,15 +276,9 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`review_ID`, `rating`, `description`, `order_ID`) VALUES
-(1, 5, 'description', 2),
-(2, 5, 'Like it ', 4),
-(3, 1, 'ok', 5),
-(4, 1, 'bad', 1),
-(5, 5, 'fixed rating', 1),
-(7, 5, 'Loved it', 9),
-(8, 5, 'Liked It', 8),
 (9, 1, 'oh Yeah', 2),
-(10, 5, 'Loved the Service', 11);
+(10, 5, 'Loved the Service', 11),
+(11, 4, 'The food was hot n spicy.', 21);
 
 --
 -- Indexes for dumped tables
@@ -371,31 +359,31 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `menu_item`
 --
 ALTER TABLE `menu_item`
-  MODIFY `item_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `item_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `payment_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `R_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `R_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `review_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
