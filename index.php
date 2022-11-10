@@ -340,9 +340,9 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
             <div class="person">
-              <img src="images/kumar_abhishek.jpg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
-              <h3>Kumar Abhishek</h3>
-              <p class="position text-muted">Roll No: 17CS10022</p>
+              <img src="images/Gaurav.jpeg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
+              <h3>Gaurav Pagare</h3>
+              <p class="position text-muted">Front-end Developer</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -353,9 +353,9 @@
           </div>
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
             <div class="person">
-              <img src="images/gurjot_singh_suri.jpg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
-              <h3>Gurjot Singh Suri</h3>
-              <p class="position text-muted">Roll No: 17CS10058</p>
+              <img src="images/Palekar.jpeg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
+              <h3>Sakshi Palekar</h3>
+              <p class="position text-muted">Front-end Developer</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -367,8 +367,8 @@
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person">
               <img src="images/aditya_sawant.jpg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
-              <h3>Aditya Sawant</h3>
-              <p class="position text-muted">Roll No: 17CS10060</p>
+              <h3>Samruddhi Navale</h3>
+              <p class="position text-muted">Back-end Developer</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -379,9 +379,9 @@
           </div>
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person">
-              <img src="images/faraaz_mallick.png" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
-              <h3>Faraaz Rehman Mallick</h3>
-              <p class="position text-muted">Roll No: 17CS30043</p>
+              <img src="images/Vivek.jpeg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
+              <h3>Vivek Patil</h3>
+              <p class="position text-muted">Back-end Developer</p>
               <ul class="ul-social-circle">
                 <li><a href="#"><span class="icon-facebook"></span></a></li>
                 <li><a href="#"><span class="icon-twitter"></span></a></li>
