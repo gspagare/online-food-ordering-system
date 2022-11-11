@@ -366,7 +366,7 @@
           </div>
           <div class="col-md-6 col-lg-3 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
             <div class="person">
-              <img src="images/aditya_sawant.jpg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
+              <img src="images/sam.jpeg" alt="Image" class="img-fluid rounded mb-5 w-75 rounded-circle">
               <h3>Samruddhi Navale</h3>
               <p class="position text-muted">Back-end Developer</p>
               <ul class="ul-social-circle">
