@@ -80,7 +80,7 @@
                 $success = $conn->query($query);
                 if (!$success){
                     die($conn->error);
-                    $msg="Error occurred in adding manager";
+                    // $msg="Error occurred in adding manager";
                 }
             }
             echo   '<script>
