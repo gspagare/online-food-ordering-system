@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2022 at 01:13 PM
+-- Generation Time: Nov 28, 2022 at 12:14 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -40,6 +40,8 @@ INSERT INTO `address` (`username`, `address`) VALUES
 ('anu', 'Aloknagri, Pune'),
 ('anurag', 'anurag'),
 ('atharvakharat', 'Sunita Nagar, Pune'),
+('jaikumar', 'Dhule'),
+('kunalpagare673', 'Deopur, Dhule'),
 ('sakshid', 'Shaniwarwada, Pune'),
 ('siddheshpatil', 'Pune');
 
@@ -87,6 +89,8 @@ INSERT INTO `customer` (`username`, `name`, `email`, `password`, `contact_no`) V
 ('anurag', 'Anurag', 'anurag@gmail.com', 'anurag', 'anurag'),
 ('atharvakharat', 'Atharva Kharat', 'atharvakharat@gmail.com', 'atharva', '7984546521'),
 ('darshantholiya', 'Darshan', 'darshantholiya036@gmail.com', 'darshan', '5489822636'),
+('jaikumar', 'Jai Pagare', 'jaipagare100@gmail.com', 'jaikumar_9', '9422634616'),
+('kunalpagare673', 'Kunal Pagare', 'kunalpagare673@gmail.com', '12345', '8956620673'),
 ('sakshid', 'Sakshi Divate', 'sakshibabalu@gmail.com', 'babalu', '1692696969'),
 ('siddheshpatil', 'Siddhesh Vivek Patil', 'siddheshpatil@gmail.com', 'reyna', '8785844525');
 
@@ -179,7 +183,10 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`order_ID`, `total_price`, `order_date`, `order_status`, `delivery_address`, `username`, `R_ID`) VALUES
 (21, '1400', '2022-11-09', 'DELIVERED', 'Aissms Coe Pune', 'atharvakharat', 4),
 (22, '1860', '2022-11-10', 'DELIVERED', 'Sadashiv Peth, Pune', 'atharvakharat', 5),
-(23, '305', '2022-11-10', 'DELIVERED', 'Aloknagri, Pune', 'anu ', 6);
+(23, '305', '2022-11-10', 'DELIVERED', 'Aloknagri, Pune', 'anu ', 6),
+(24, '469', '2022-11-19', 'DELIVERED', 'Magarpatta, Pune', 'anu', 1),
+(25, '1600', '2022-11-28', 'DELIVERED', 'Deopur, Dhule', 'kunalpagare673', 3),
+(26, '200', '2022-11-28', 'DELIVERED', 'Dhule', 'jaikumar', 2);
 
 -- --------------------------------------------------------
 
@@ -203,7 +210,12 @@ INSERT INTO `order_item` (`order_ID`, `item_ID`, `quantity`) VALUES
 (22, 19, 3),
 (22, 20, 2),
 (23, 31, 1),
-(23, 33, 1);
+(23, 33, 1),
+(24, 28, 1),
+(24, 29, 1),
+(24, 30, 1),
+(25, 23, 2),
+(26, 26, 1);
 
 -- --------------------------------------------------------
 
@@ -252,7 +264,7 @@ CREATE TABLE `restaurant` (
 
 INSERT INTO `restaurant` (`R_ID`, `name`, `location`, `phone_number`, `rating`) VALUES
 (1, 'Crazy Cheesy', 'FC road', '999888222', 4.5),
-(2, 'Vaishali', 'JM road', '999333222', 5.0),
+(2, 'Vaishali', 'JM road', '999333222', 4.0),
 (3, 'Social', 'Sinhgad road', '7777777', 4.2),
 (4, 'Dominos', 'Vimaan Nagar', '44445555', 4.0),
 (5, 'Baba ka Dhabha', 'shivaji nagar', '123456789', 4.5),
@@ -278,7 +290,8 @@ CREATE TABLE `review` (
 INSERT INTO `review` (`review_ID`, `rating`, `description`, `order_ID`) VALUES
 (9, 1, 'oh Yeah', 2),
 (10, 5, 'Loved the Service', 11),
-(11, 4, 'The food was hot n spicy.', 21);
+(11, 4, 'The food was hot n spicy.', 21),
+(12, 4, 'Mast thi', 26);
 
 --
 -- Indexes for dumped tables
@@ -365,7 +378,7 @@ ALTER TABLE `menu_item`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -383,7 +396,7 @@ ALTER TABLE `restaurant`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `review_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -420,18 +433,6 @@ ALTER TABLE `orders`
 ALTER TABLE `order_item`
   ADD CONSTRAINT `order_item_ibfk_1` FOREIGN KEY (`order_ID`) REFERENCES `orders` (`order_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `order_item_ibfk_2` FOREIGN KEY (`item_ID`) REFERENCES `menu_item` (`item_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `payment`
---
-ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`order_ID`) REFERENCES `orders` (`order_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`order_ID`) REFERENCES `orders` (`order_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
