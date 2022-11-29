@@ -2,10 +2,11 @@ Online Food Ordering System
 DBMS Lab, Mini Project - Web App
 
 Group Members
-Kumar Abhishek, 17CS10022
-Gurjot Singh Suri, 17CS10058
-Aditya Sawant, 17CS10060
-Faraaz Rehman Mallick, 17CS30043
+Gaurav Pagare
+Samruddhi Navale
+Sakshi Palekar
+Vivek Patil
+
 
 Project Description:-
 
