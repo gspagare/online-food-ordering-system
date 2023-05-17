@@ -227,7 +227,7 @@
                             <div class="row form-group">
                                 <div class="col-md-12 mb-6 mb-md-0">
                                 <label class="text-black" for="phone_number">Image</label>
-                                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" required>
+                                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpg, image/jpeg, image/png" class="form-control" required>
                                 </div>
                             </div>
 
